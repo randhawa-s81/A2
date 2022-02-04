@@ -17,87 +17,97 @@ import java.util.ArrayList;
 public class Driver  {
 
     public static void main(String[] args) throws IOException{
-    // ***** constants *******
-    
-    // ***** variables *****
-    
+        // ***** constants *******
+
+        // ***** variables *****
+
         String name = ""; 
-        
-    
+
         String banner = "";             // output banner
         String prompt = "";             // prompt for user input
-        
+
         String strin = "";              // string fro keyboard input
         String strout = "";             // string for formatted output
-        
+
         String delim = "[ ]+";          // delimiter for splitting input records
         String[] tokens = null;         // used to split input records
         BufferedReader fin = null;
-        
+
         // a new line character that works on every computer system
         String nl = System.lineSeparator();
-    
-    // ***** objects *****
-    
-         ArrayList<Jar> jar = new ArrayList<>();
-        
+
+        // ***** objects *****
+
+        ArrayList<Jar> jar = new ArrayList<>();
+
+        //Jar jar = new Jar(); 
+
         // file io buffers for reading and writing to text files
-        
+
         //BufferedReader fin = new BufferedReader(new FileReader("filename.txt"));
         //PrintWriter fout = new PrintWriter(new BufferedWriter(new FileWriter("outfle.txt")));
-    
-        
-         try{
-        fin = new BufferedReader(new FileReader(".txt"));
-    }// end try 
-    catch(FileNotFoundException e) {
-        System.out.println("file has not been found");
-        fin = null; 
-    }// end catch FileNotFoundException e
-    // ***** print banners *****
-    
+
+        try{
+            fin = new BufferedReader(new FileReader("A2InputFile.txt"));
+        }// end try 
+        catch(FileNotFoundException e) {
+            System.out.println("file has not been found");
+            fin = null; 
+        }// end catch FileNotFoundException e
+        // ***** print banners *****
+
         // banner = "*****************************" + nl;
         // banner += "Name:        Sveinson" + nl;
         // banner += "Class:       CS30S" + nl;
         // banner += "Assignment:  Ax Qy" + nl;
         // banner += "*****************************" + nl + nl;
-        
+
         // System.out.println(banner);
-         //fout.print(banner);
-    
-    // ***** Get Input *****
-    
+        //fout.print(banner);
+
+        // ***** Get Input *****
+
         // prompt for input
         // read input from keyboard
         // echo input back to console window
-    
-    // ***** Main Processing *****
-    
-    strin = fin.readLine();
-    while(strin != null){
-        System.out.println(strin);
+
+        // ***** Main Processing *****
+
+        strin = fin.readLine();
+        while(strin != null){
+            //System.out.println(strin);
+
         
+            jar.add(new Jar(strin));
         
+            strin = fin.readLine(); 
+        }// end while 
         
+        for(Jar j: jar)
+            System.out.println(j.toString());
+            
+        //for(Cookie c: cookie)
+        //    System.out.println(c.toString());
         
-        
-    
-        
-        strin = fin.readLine(); 
-    }// end while 
-    
-    // ***** Print Formatted Output *****
-    
-    // ***** Closing Message *****
-    
+
+        // ***** Print Formatted Output *****
+
+        // ***** Closing Message *****
+
         System.out.println();
         System.out.println("end of processing");
         //fout.println("End of Processing");
-        
-    // **** close io buffers *****
-    
+
+        // **** close io buffers *****
+
         //fin.close();
         //fout.close();
     } // end main 
-    
+
+    public static void associations(Jar j, Cookie c){
+        j.setCookie(c);
+        c.setJar(j);
+
+    }// end associations 
+
 } // end FormatTemplate
