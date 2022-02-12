@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * 
  *  Assignment:     Assignment 2 cookies and jars 
  * 
- *  Description:    Place a short description of your program here
+ *  Description:    Accociations between two class objects 
  * 
  *************************************************************/
 
@@ -29,9 +29,14 @@ public class Driver  {
         String strin = "";              // string fro keyboard input
         String strout = "";             // string for formatted output
 
-        String delim = "[ ]+";          // delimiter for splitting input records
+        String delim = "[, ]+";          // delimiter for splitting input records
         String[] tokens = null;         // used to split input records
         BufferedReader fin = null;
+        
+        String jars = "";
+        String flavour = "";
+        
+        int n = 0; // number of itereration per while loop
 
         // a new line character that works on every computer system
         String nl = System.lineSeparator();
@@ -39,8 +44,7 @@ public class Driver  {
         // ***** objects *****
 
         ArrayList<Jar> jar = new ArrayList<>();
-
-        //Jar jar = new Jar(); 
+        ArrayList<Cookie> cookie = new ArrayList<>();
 
         // file io buffers for reading and writing to text files
 
@@ -75,23 +79,39 @@ public class Driver  {
 
         strin = fin.readLine();
         while(strin != null){
-            //System.out.println(strin);
-
-        
-            jar.add(new Jar(strin));
-        
-            strin = fin.readLine(); 
-        }// end while 
-        
-        for(Jar j: jar)
-            System.out.println(j.toString());
+            //System.out.println(strin); // testing if data is being read correctly
             
-        //for(Cookie c: cookie)
-        //    System.out.println(c.toString());
+            tokens = strin.split(delim); // splitting data 
+            
+            jars = tokens[0];
+            flavour = tokens[1];
+            
+            jar.add(new Jar(jars));
+            cookie.add(new Cookie(flavour));
+            
+            
+            
+            
+            // for(int i = 0; i < n; i ++){
+                // Cookie c1 = new Cookie(tokens[1]);
+                
+            // }// end 
+            
+            strin = fin.readLine(); // prime the loop 
+        }// end while eof loop
         
-
+        
+    
         // ***** Print Formatted Output *****
-
+        
+        // printing the name of jars 
+        for(Jar e: jar)
+        System.out.println(e.toString());
+        
+        // printing the names of cookies 
+        for(Cookie c: cookie)
+        System.out.println(c.toString());
+    
         // ***** Closing Message *****
 
         System.out.println();
@@ -107,7 +127,6 @@ public class Driver  {
     public static void associations(Jar j, Cookie c){
         j.setCookie(c);
         c.setJar(j);
-
     }// end associations 
 
 } // end FormatTemplate

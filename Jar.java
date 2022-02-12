@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /********************************************************************
  * Programmer: Samarjeet Randhawa
  * Class:  CS30S
@@ -12,12 +14,19 @@
 public class Jar  {
     //*** Class Variables ***
     
+    private String nl = System.lineSeparator();
+    
     private static int nextId = 1000; 
+    
+    //private ArrayList<Cookie> jars; 
     
     //*** Instance Variables ***
     
-    private String name; 
-    private Cookie cookie; 
+    //private ArrayList<Jar> Cookie = new ArrayList<>();
+    
+    private String name;           // name of jar 
+    private Cookie cookie;         // cookie 
+    
     private int id; 
     
     //*** Constructors ***
@@ -50,7 +59,7 @@ public class Jar  {
     //*** Getters ***
     
     public String getName(){
-        return name.toString(); 
+        return name;
     }// end getName 
     
     public int getId(){
@@ -58,25 +67,24 @@ public class Jar  {
     }// end getId
     
     public Cookie getCookie(){
-        return cookie; 
+        return cookie;
     }// end getCookie 
     
     //*** Setters ***
     
     public void setName(String n){
-        name = n;
+        this.name = n;
     }// end setName 
     
     public void setCookie(Cookie c){
-        cookie = c;
+        this.cookie = c;
     }// end setCookie 
     
     //*** other *** 
     public String toString(){
-        String st ="";
-        st += "Jar name: " + name;
-        st += "Cookies: " + cookie; 
+        StringBuilder jar = new StringBuilder();
+        jar.append("jar name: " + getName() + " cookie: " + getCookie() + nl); 
         
-        return st; 
+        return jar.toString(); 
     }// end toString 
 } // end of public class

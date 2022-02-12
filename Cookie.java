@@ -2,9 +2,7 @@
  * Programmer:    Samarjeet Randhawa 
  * Class:  CS30S
  *
- * Assignment: Assignment 2 cookies and jars 
- *
- * Description: create an associoation between cookies and jars using OOPa
+ * Description: create an associoation between cookies and jars using OOP
  ***********************************************************************/
 
 // import libraries as needed here
@@ -12,25 +10,28 @@
 public class Cookie {
     //*** Class Variables ***
     
+    private String nl = System.lineSeparator();
+    
     private static int nextId = 1000 ;
     
     //*** Instance Variables ***
     
     private String flavour;
     private Jar jar;
-    private static int id; 
+    
+    private int id; 
     
     //*** Constructors ***
     
     // method to automatically assign id to new object 
-    public static void ID(){
-        id = nextId++; 
-        }// end ID
+    // public static void ID(){
+        // id = nextId++; 
+        // }// end ID
     
     //no arg constructor 
     public Cookie(){
         //id = nextId++;
-        ID(); 
+        id = nextId++;  
         
         this.flavour = "None";
         //this.jar = "None"; 
@@ -39,7 +40,7 @@ public class Cookie {
     // argument constructor 
     public Cookie (String f){
         //id = nextId++;
-        ID();
+        id = nextId++; 
         
         this.flavour = f;  
         //this.jar = j;
@@ -84,12 +85,10 @@ public class Cookie {
     
     @Override 
     public String toString(){
-        String st = "";
-        st += "Id: " + id;
-        st += "flavour: " + flavour;
-        //st += "Jar : " + jar;
-        
-        return st; 
+        StringBuilder cookie = new StringBuilder();
+        cookie.append("Id:" + getId() + " flavour: " + getFlavour() + nl); 
+
+        return cookie.toString();
     }// end toString 
     
 } // end of public class
