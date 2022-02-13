@@ -45,6 +45,13 @@ public class Driver  {
 
         ArrayList<Jar> jar = new ArrayList<>();
         ArrayList<Cookie> cookie = new ArrayList<>();
+        /* you don't really need an arraylist for cookies,
+        the way i picture this association is that the cookies 
+        can't be accessed except by using their associated jar
+        for example
+        System.out.println("Chocolate: " + chocolateJar.getCookie());
+        
+        would call the toString() method of the cookie assiciated with the chocolateJar jar*/
 
         // file io buffers for reading and writing to text files
 
@@ -83,11 +90,22 @@ public class Driver  {
             
             tokens = strin.split(delim); // splitting data 
             
-            jars = tokens[0];
+            /* is your split working? it looks like .split will split the input string at every , (comma) and every space.
+            print tokens.size() to see how many tokens have been created. You might need to fine tune your delimiter so that it
+            only splits the string on comma's, you might also try editting the data file to remove all of the spaces.*/
+            
+            jars = tokens[0];       
             flavour = tokens[1];
             
-            jar.add(new Jar(jars));
+            jar.add(new Jar(jars));                     // this is good to create and add all of the jars
+            
+            /* create a new cookie and create its association with its jar here
+            so, rather than adding the cookie to an arraylist
+            pass in the new cookie to the associations method
+            You'll have to figure out what jar to pass in as well, it'll be something like jars.get(some index goes here)*/
             cookie.add(new Cookie(flavour));
+            
+            /* if you do create two arraylists you can iterate through the lists createing the associations later, i.e. after the eof loop*/
             
             // for(int i = 0; i < n; i ++){
                 // Cookie c1 = new Cookie(tokens[1]);
