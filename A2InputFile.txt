@@ -1,8 +1,1 @@
-choclateJar, choclate chip cookie
-brownSugarJar, brown sugar cookie
-M'n'M'sJar, m'n'ms cookie 
-whiteChoclateJar, macadamiea cookie
-oatmealJar, oatmeal cookie
-peanutButterJar, peanut butter cookie  
-rasinJar, raisin cookie 
-gingerJar, gingerbread cookie 
+choclateJar, choclateChipCookie
