@@ -89,9 +89,6 @@ public class Driver  {
             jar.add(new Jar(jars));
             cookie.add(new Cookie(flavour));
             
-            
-            
-            
             // for(int i = 0; i < n; i ++){
                 // Cookie c1 = new Cookie(tokens[1]);
                 
@@ -100,17 +97,18 @@ public class Driver  {
             strin = fin.readLine(); // prime the loop 
         }// end while eof loop
         
-        
-    
-        // ***** Print Formatted Output *****
-        
-        // printing the name of jars 
+         // printing the name of jars 
         for(Jar e: jar)
         System.out.println(e.toString());
         
         // printing the names of cookies 
         for(Cookie c: cookie)
         System.out.println(c.toString());
+        
+        // set up associations
+        
+        
+        // ***** Print Formatted Output *****
     
         // ***** Closing Message *****
 
