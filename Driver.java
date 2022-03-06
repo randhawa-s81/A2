@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * 
  *************************************************************/
 
-public class Driver  {
+public class Driver {
     public static void main(String[] args) throws IOException{
         // ***** constants *******
     
@@ -44,7 +44,6 @@ public class Driver  {
 
         ArrayList<Jar> jar = new ArrayList<>();
         //ArrayList<Cookie> cookie = new ArrayList<>();
-        
         
         /* you don't really need an arraylist for cookies,
         the way i picture this association is that the cookies 
@@ -80,12 +79,14 @@ public class Driver  {
             
             //System.out.println(tokens.length); // checking if tokens.split is correct 
             
+             
             jars = tokens[0];       
             jar.add(new Jar(jars));                     // this is good to create and add all of the jars
             
             Cookie c1 = new Cookie(tokens[1]);
-            //Cookie c2 = new Cookie(tokens[1]);
+            Cookie c2 = new Cookie(tokens[1]);
             
+            n++;
             associations(jar.get(0), c1);
             //associations(jar.get(0), c2);
         
@@ -111,6 +112,8 @@ public class Driver  {
         for(Jar e: jar)
         System.out.println(e.toString());
         
+
+        
         // printing the names of cookies 
         
         // ***** Print Formatted Output *****
@@ -126,10 +129,10 @@ public class Driver  {
         //fin.close();
         //fout.close();
     } // end main 
-
+    
     public static void associations(Jar j, Cookie c){
         j.setCookie(c);
         c.setJar(j);
-    }// end associations 
-
+    }// end associations '
+    
 } // end FormatTemplate
