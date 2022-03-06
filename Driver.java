@@ -80,7 +80,13 @@ public class Driver {
          
             Cookie c1 = new Cookie(tokens[1]);
             //Cookie c2 = new Cookie(tokens[1]);
-            
+  
+ /* everyuthing looks good except
+ in your call to the associations method you are passing in the first element in the jar arraylist
+ you could use someting like jar.get(jar.size()-1) so that you will associate the
+ Jar that has just been added. Another possible solution is to add a counter so you know how many jars have been aded
+ and you could use that i.e jar.get(counter), or jar.get(counter -1)
+ */
             associations(jar.get(0), c1);
             //associations(jar.get(0), c2);
             
