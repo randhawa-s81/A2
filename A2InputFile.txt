@@ -1,4 +1,3 @@
 chocolateChipJar, chocolateChipCookie
-brownSugarJar, brownCookie
-MnM'sJar, Cookie
-MacademiaJar, WhiteCookie
+brownSugar, BrownSugarCookie
+DarkChocolateJar, DarkChoclateCookie
