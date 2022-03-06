@@ -43,7 +43,7 @@ public class Driver {
         // ***** objects *****
 
         ArrayList<Jar> jar = new ArrayList<>();
-        ArrayList<Cookie> cookie = new ArrayList<>();
+        //ArrayList<Cookie> cookie = new ArrayList<>();
         
         /* you don't really need an arraylist for cookies,
         the way i picture this association is that the cookies 
